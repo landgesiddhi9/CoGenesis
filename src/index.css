@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #FAF8F5;
+  --color-cream: #F5F0EB;
+  --color-sand: #E8E0D8;
+  --color-warm-gray: #A39890;
+  --color-stone: #7A7168;
+  --color-earth: #5C5347;
+  --color-espresso: #3D352E;
+  --color-charcoal: #2A2420;
+  --color-deep-brown: #1A1512;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Josefin Sans', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-sand);
+  color: var(--color-deep-brown);
+}
+
+/* Premium overlay scrollbar — luxury fashion style */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+*:hover {
+  scrollbar-color: rgba(163, 152, 144, 0.4) transparent;
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Show thumb on body hover */
+body:hover::-webkit-scrollbar-thumb {
+  background: rgba(163, 152, 144, 0.35);
+}
+
+body:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 113, 104, 0.55);
+}
+
+/* Letter spacing utility for editorial feel */
+.tracking-editorial {
+  letter-spacing: 0.35em;
+}
+
+.tracking-wide-editorial {
+  letter-spacing: 0.5em;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.6s ease;
+}
+
+/* Parallax-like subtle scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Image hover zoom effect */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Product card hover — luxury editorial style */
+.product-img {
+  transition: transform 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.group:hover .product-img {
+  transform: scale(1.03);
+}
+
+.product-overlay {
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-info {
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Separator line */
+.separator {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-warm-gray);
+}
+
+/* Luxury button styles */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  padding: 0.875rem 2rem;
+  border: 1px solid var(--color-sand);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-luxury:hover {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  border-color: var(--color-charcoal);
+}
+
+/* Nav link hover effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
